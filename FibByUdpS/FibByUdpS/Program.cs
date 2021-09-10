@@ -49,8 +49,10 @@ namespace FibByUdpS
                 );
             IPAddress ip = IPAddress.Parse("127.0.0.1");
             IPEndPoint addr = new IPEndPoint(ip, 1337);
-            sock.Bind(addr);
+            //sock.Bind(addr);
+            
             int seq = 1;
+            Send(1, ref seq, sock, addrs);
             int lastSeq = 0;
             long value = 1;
             EndPoint addrs = new IPEndPoint(0, 0);
